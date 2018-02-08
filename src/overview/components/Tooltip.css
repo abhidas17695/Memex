@@ -1,11 +1,10 @@
 .mainTooltip {
     position: fixed;
-    right: 8px;
+    left: 8px;
     padding: 5px;
     margin-top: -13px;
     max-width: 220px;
     color: #3eb995;
-    max-height: 120px;
     overflow: hidden;
     z-index: 1;
 
@@ -23,7 +22,7 @@
 .tooltipButton {
     display: flex;
     cursor: pointer;
-    float: right;
+    float: left;
 }
 
 .tooltipText {
@@ -44,5 +43,5 @@
     background-image: url('/img/refresh-tooltip.svg');
     width: 18px;
     height: 18px;
-    margin-right: 4px;
+    margin-left: 4px;
 }
