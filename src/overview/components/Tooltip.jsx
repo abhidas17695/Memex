@@ -26,7 +26,7 @@ const Tooltip = ({
                 <div
                     className={localStyles.refreshIcon}
                     onClick={onClickRefreshTooltip}
-                    title="Click so new new tip"
+                    title="Click so see new tip"
                 />
             )}
         </div>
