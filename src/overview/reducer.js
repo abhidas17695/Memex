@@ -275,6 +275,25 @@ const setShowTooltip = (state, { isShowTooltip }) => {
     }
 }
 
+const setTooltipIndex = state => {
+    let toolTips = state.toolTips
+    let index = Math.floor(Math.random() * tooltipsSize)
+
+    while (toolTips.indexOf(index) !== -1) {
+        index = Math.floor(Math.random() * tooltipsSize)
+    }
+
+    if (toolTips.length === tooltipsSize) {
+        toolTips = []
+    }
+
+    return {
+        ...state,
+        tooltipIndex: index,
+        toolTips: toolTips,
+    }
+}
+
 const incSearchCount = state => ({
     ...state,
     searchCount: state.searchCount + 1,
@@ -343,10 +362,7 @@ export default createReducer(
         [actions.setTagFilters]: setTagFilters,
         [actions.setDomainFilters]: setDomainFilters,
         [actions.showTooltip]: setShowTooltip,
-        [actions.tooltipIndex]: state => ({
-            ...state,
-            tooltipIndex: Math.floor(Math.random() * tooltipsSize),
-        }),
+        [actions.tooltipIndex]: setTooltipIndex,
     },
     defaultState,
 )
