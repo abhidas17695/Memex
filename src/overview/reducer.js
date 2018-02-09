@@ -32,8 +32,9 @@ const defaultState = {
     filterPopup: '',
     filterTags: [],
     filterDomains: [],
-    showTooltip: false,
+    showTooltip: true,
     tooltipIndex: 0,
+    toolTips: [],
 }
 
 function setQuery(state, query) {
@@ -267,6 +268,13 @@ const setFilterPopup = (state, name) => {
     return { ...state, filterPopup }
 }
 
+const setShowTooltip = (state, { isShowTooltip }) => {
+    return {
+        ...state,
+        showTooltip: isShowTooltip || !state.showTooltip,
+    }
+}
+
 const incSearchCount = state => ({
     ...state,
     searchCount: state.searchCount + 1,
@@ -334,10 +342,7 @@ export default createReducer(
         [actions.toggleDomainFilter]: toggleFilter('filterDomains'),
         [actions.setTagFilters]: setTagFilters,
         [actions.setDomainFilters]: setDomainFilters,
-        [actions.showTooltip]: state => ({
-            ...state,
-            showTooltip: !state.showTooltip,
-        }),
+        [actions.showTooltip]: setShowTooltip,
         [actions.tooltipIndex]: state => ({
             ...state,
             tooltipIndex: Math.floor(Math.random() * tooltipsSize),
