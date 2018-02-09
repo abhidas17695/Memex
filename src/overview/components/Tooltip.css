@@ -11,6 +11,11 @@
     @media (max-width: 1200px) {
         display: none;
     }
+
+    @media (max-width: 1280px) {
+        display: inline-block;
+        max-width: 210px;
+    }
 }
 
 a {
