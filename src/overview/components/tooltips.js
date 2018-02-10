@@ -23,7 +23,7 @@ const tooltips = [
     {
         title: 'Tag Pages',
         description:
-            "Quickly tag and group any page via the <img style='height:18px; vertical-align:bottom' src='/img/worldbrain-logo-narrow-bw-16.png'/>-icon in the menu bar or via the results list." /* or with the <a id='shortcuts' href='chrome://extensions/configureCommands'>shortcuts</a> you defined.*/,
+            "Quickly tag and group any page via the <img style='height:18px; vertical-align:bottom' src='/img/worldbrain-logo-narrow-bw-16.png'/>-icon in the menu bar or via the results list." /* or with the <a id='shortcuts' href='chrome://extensions/configureCommands'>shortcuts</a> you defined. */,
     },
 
     {
