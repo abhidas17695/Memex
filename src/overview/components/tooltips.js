@@ -10,7 +10,7 @@ const tooltips = [
             "Only exact word-matches yield results. Fuzzy matching or synonym-search are not a feature yet.<br/><a target='_new' href='https://worldbrain.helprace.com/i23-known-limitations-of-searching'>See full list</a> of current limitations.",
     },
     {
-        title: 'Express time filters in natural language',
+        title: 'Express time filters in human language',
         description:
             'Try typing "<i>2 weeks ago<i/>" into the date picker field',
     },
