@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Waypoint from 'react-waypoint'
 import reduce from 'lodash/fp/reduce'
+import localStyles from './components/NoResult.css'
 
 import analytics from 'src/analytics'
 import { Wrapper, LoadingIndicator } from 'src/common-ui/components'
@@ -242,8 +243,32 @@ class OverviewContainer extends Component {
         if (this.props.isBadTerm) {
             return (
                 <ResultsMessage>
-                    Your search terms are very vague, please try and use more
-                    unique language
+                    <p className={localStyles.title}>No Results</p>
+                    <p className={localStyles.subtitle}>
+                        Search terms are too common, or have been filtered out
+                        to increase performance.
+                    </p>
+                    <p className={localStyles.subsubtitle}>
+                        We know there is still a lot of{' '}
+                        <a target="_new" href="https://worldbrain.io/help">
+                            room to improve
+                        </a>.
+                    </p>
+                    <div className={localStyles.btnBox}>
+                        <a
+                            target="_new"
+                            href="https://worldbrain.helprace.com/"
+                        >
+                            <button className={localStyles.button}>
+                                Report a Problem
+                            </button>
+                        </a>
+                        <a target="_new" href="https://eepurl.com/dkmJfr">
+                            <button className={localStyles.button}>
+                                Get Monthly Updates
+                            </button>
+                        </a>
+                    </div>
                 </ResultsMessage>
             )
         }
@@ -255,7 +280,35 @@ class OverviewContainer extends Component {
         if (this.props.noResults) {
             return (
                 <ResultsMessage>
-                    No results found for this query. ¯\_(ツ)_/¯{' '}
+                    <p className={localStyles.title}>No Results </p>
+                    <p className={localStyles.subtitle}>
+                        found for this query. ¯\_(ツ)_/¯<br />
+                        <br />
+                    </p>
+                    <p className={localStyles.subsubtitle}>
+                        We know there is still a lot of{' '}
+                        <a
+                            target="_new"
+                            href="https://worldbrain.helprace.com/i23-known-limitations-of-searching"
+                        >
+                            room to improve the search.
+                        </a>.
+                    </p>
+                    <div className={localStyles.btnBox}>
+                        <a
+                            target="_new"
+                            href="https://worldbrain.helprace.com/"
+                        >
+                            <button className={localStyles.button}>
+                                Report a Problem
+                            </button>
+                        </a>
+                        <a target="_new" href="https://eepurl.com/dkmJfr">
+                            <button className={localStyles.button}>
+                                Get Monthly Updates
+                            </button>
+                        </a>
+                    </div>
                 </ResultsMessage>
             )
         }
